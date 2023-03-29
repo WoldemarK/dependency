@@ -1,17 +1,23 @@
-package com.example.dependency;
+package com.example.depend;
 
-import lombok.RequiredArgsConstructor;
+import lombok.Data;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+@Data
 @Component
-@RequiredArgsConstructor
 public class CarWithSetter {
-    private final Engine engine;
+    private Logger logger;
+    private Engine engine;
 
-    public Engine getEngine() {
-        return engine;
+    @Autowired(required = false)
+    public void setLogger(Logger logger) {
+        this.logger = logger;
     }
-    public void setEngine(Engine engine){
-        this.engine = engine;
+
+    public void save() {
+        if (logger != null)
+            logger.log("logged");
+        System.out.println("save method");
     }
 }
