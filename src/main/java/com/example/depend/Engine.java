@@ -9,4 +9,12 @@ public class Engine {
     private double beat;
     private String name;
 
+    public Engine(Long id, double beat, String name) {
+        this.id = id;
+        this.beat = beat;
+        this.name = name;
+    }
+
+    public Engine() {
+    }
 }

@@ -8,8 +8,10 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class DependencyApplication {
 
     public static void main(String[] args) {
-        ApplicationContext xmlConfigContext =
+        ApplicationContext context =
                 new ClassPathXmlApplicationContext("depend.xml");
+
+
     }
 
 }
